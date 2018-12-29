@@ -1,0 +1,36 @@
+{
+  "name": "istanbulscrapper",
+  "version": "1.0.0",
+  "description": "İstanbul için günlük nöbetçi eczaneleri çekebileceğiniz nodejs kod parçası",
+  "main": "index.js",
+  "scripts": {
+    "test": "node istanbul.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmetbesli/Istanbul-Nobetci-Eczane-Botu.git"
+  },
+  "keywords": [
+    "bot",
+    "istanbul",
+    "nöbetçi",
+    "eczane"
+  ],
+  "author": "Ahmet Aziz Beşli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmetbesli/Istanbul-Nobetci-Eczane-Botu/issues"
+  },
+  "homepage": "https://github.com/ahmetbesli/Istanbul-Nobetci-Eczane-Botu#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "cron": "^1.6.0",
+    "fs": "0.0.1-security",
+    "ftp": "^0.3.10",
+    "mysql": "^2.16.0",
+    "nightmare": "^3.0.1",
+    "nightmare-load-filter": "^0.2.0",
+    "node-cmd": "^3.0.0",
+    "xvfb": "^0.2.3"
+  }
+}
