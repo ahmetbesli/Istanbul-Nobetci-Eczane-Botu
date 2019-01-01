@@ -11,6 +11,11 @@ Konsoldan projenin bulunduğu konuma gelerek aşağıda ki komutu çalıştırma
 ## Kullanım şekilleri
 
 Kodu çalıştırırken belirli opsiyonlar bulunmaktadır. Bunlar; "srv", "json", "ftp", "db" ve "" tur. Bu opsiyonları komut satırında vermeniz gerekmektedir.
+Opsiyon birlikte kullanılabilir. Herhangi bir düzeni yoktur. Aralarında boşluk olucak çekilde komut satırında belirtebilirsiniz.
+
+Örn:
+
+`node istanbul.js "srv" "json" "ftp"` vb.
 
 #### Konsolda Görüntüleme
 
@@ -28,7 +33,7 @@ Eczaneleri istanbul_**günün tarihi**.json olarak kodun bulunduğu konuma dosya
 
 `node istanbul.js "ftp"`
 
-Eczaneleri sizin belirliyeceğiniz bir sunucuya bağlantı kurarak yükleme işlemini gerçekleştirecektir.
+Eczaneleri sizin belirliyeceğiniz bir sunucuya bağlantı kurarak yükleme işlemini gerçekleştirecektir; kaydedilecek dosya .json tipindedir.
 Bu kodu çalıştırmadan önce host.json dosyasını gerekli bilgilerle düzenlemeniz gerekmektedir.
 
 Örn:
@@ -46,7 +51,7 @@ Bu kodu çalıştırmadan önce host.json dosyasını gerekli bilgilerle düzenl
 
 `node istanbul.js "db"`
 
-Eczaneleri veritabanına kaydetmek için bu işlemi kullanmanız gerekmektedir. Veritabanı tipini aşağıdaki gibi oluşturabilirsiniz.
+Eczaneleri veritabanına kaydetmek için bu işlemi kullanmanız gerekmektedir. Veritabanında tablonuzu aşağıdaki gibi oluşturabilirsiniz.
 
 MySQL:
 
@@ -86,7 +91,7 @@ Kodu görüntüleme erişiminin olmadığı sunucularda,
 `node istanbul.js "srv"` olarak çalıştırmanız gerekmektedir. Aksi takdirde hata ile karşılaşılması muhtemeldir.
 
 
-### Kodun Otomatik Olarak Günlük Çalıştırılması
+#### Kodun Otomatik Olarak Günlük Çalıştırılması
 
 `forever start index.js`
 
