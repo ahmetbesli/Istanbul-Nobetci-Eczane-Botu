@@ -11,7 +11,7 @@ Konsoldan projenin bulunduğu konuma gelerek aşağıda ki komutu çalıştırma
 ## Kullanım şekilleri
 
 Kodu çalıştırırken belirli opsiyonlar bulunmaktadır. Bunlar; "srv", "json", "ftp", "db" ve "" tur. Bu opsiyonları komut satırında vermeniz gerekmektedir.
-Opsiyon birlikte kullanılabilir. Herhangi bir düzeni yoktur. Aralarında boşluk olucak çekilde komut satırında belirtebilirsiniz.
+Opsiyon birlikte kullanılabilir. Herhangi bir düzeni yoktur. Aralarında boşluk olucak şekilde komut satırında belirtebilirsiniz.
 
 Örn:
 
