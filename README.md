@@ -12,19 +12,19 @@ Konsoldan projenin bulunduğu konuma gelerek aşağıda ki komutu çalıştırma
 
 Kodu çalıştırırken belirli opsiyonlar bulunmaktadır. Bunlar; "srv", "json", "ftp", "db" ve "" tur. Bu opsiyonları komut satırında vermeniz gerekmektedir.
 
-### Konsolda Görüntüleme
+#### Konsolda Görüntüleme
 
 `node istanbul.js`
 
-Eczaneleri konsolda JSON halinde görüntüler.
+Eczaneleri konsolda JSON tipinde görüntüler.
 
-### JSON Dosyası Olarak Kaydetme
+#### JSON Dosyası Olarak Kaydetme
 
 `node istanbul.js "json"`
 
 Eczaneleri istanbul_**günün tarihi**.json olarak kodun bulunduğu konuma dosya olarak kaydeder.
 
-### Uzak Sunucuya Veri Yükleme
+#### Uzak Sunucuya Veri Yükleme
 
 `node istanbul.js "ftp"`
 
@@ -33,7 +33,7 @@ Bu kodu çalıştırmadan önce host.json dosyasını gerekli bilgilerle düzenl
 
 Örn:
 
-```javascript
+```json
 {
     "host": "example.com",
     "user": "user",
@@ -42,7 +42,7 @@ Bu kodu çalıştırmadan önce host.json dosyasını gerekli bilgilerle düzenl
 }
 ```
 
-### Veritabanına Veriyi Kaydetme
+#### Veritabanına Veriyi Kaydetme
 
 `node istanbul.js "db"`
 
@@ -69,7 +69,7 @@ Bu işlem ardından database bilgilerini db.json dosyasından düzenleyiniz.
 
 Örn: 
 
-```javascript
+```json
 {
     "host": "localhost",
     "user": "root",
@@ -78,6 +78,45 @@ Bu işlem ardından database bilgilerini db.json dosyasından düzenleyiniz.
     "debug": false
 }
 ```
+
+#### Kodun Amazon EC2 vb. Sunucularda Çalıştırılması
+
+Kodu görüntüleme erişiminin olmadığı sunucularda,
+
+`node istanbul.js "srv"` olarak çalıştırmanız gerekmektedir. Aksi takdirde hata ile karşılaşılması muhtemeldir.
+
+
+### Kodun Otomatik Olarak Günlük Çalıştırılması
+
+`forever start index.js`
+
+Kodu günün belirlenen saatte otomatik olarak çalışmasını sağlayacaktır. Bu işlemi durdurmak için yapmanız gereken;
+
+`forever stopall`
+
+Kodun hangi saatte ve ne şekilde çalışacağını index.js dosyasından ayarlayabilirsiniz.
+
+Örn:
+
+```javascript
+var cron = require('cron');
+var cmd = require("node-cmd");
+
+var job1 = new cron.CronJob({
+    cronTime: '00 09 10 * * *', // Her gün saat 9:10'da kod çalışacaktır.
+    onTick: function () {
+        cmd.get('node ./istanbul.js "srv" "json" "ftp" "db"', function (err, data, stderr) { // Çalışma tipi "srv" "json" "ftp" "db"
+
+            console.log("Bot çalıştırıldı");
+        });
+
+    },
+    start: true,
+    timeZone: 'Europe/Istanbul'
+});
+```
+
+
 
 
 
