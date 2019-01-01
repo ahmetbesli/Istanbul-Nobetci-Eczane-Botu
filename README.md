@@ -33,12 +33,14 @@ Bu kodu çalıştırmadan önce host.json dosyasını gerekli bilgilerle düzenl
 
 Örn:
 
-**{
+```javascript
+{
     "host": "example.com",
     "user": "user",
     "password": "123456",
     "port": 21
-}**
+}
+```
 
 ### Veritabanına Veriyi Kaydetme
 
@@ -48,7 +50,8 @@ Eczaneleri veritabanına kaydetmek için bu işlemi kullanmanız gerekmektedir. 
 
 MySQL:
 
-**CREATE TABLE IF NOT EXISTS `eczane` (
+```mysql
+CREATE TABLE IF NOT EXISTS `eczane`.`eczane` (
   `id` (11) NOT NULL,
   `name` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `date` DATE NULL DEFAULT NULL,
@@ -59,12 +62,14 @@ MySQL:
   `latitude` VARCHAR(400) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `longitude` VARCHAR(400) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)**
- 
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+```
+
 Bu işlem ardından database bilgilerini db.json dosyasından düzenleyiniz.
 
 Örn: 
 
+```javascript
 {
     "host": "localhost",
     "user": "root",
@@ -72,6 +77,7 @@ Bu işlem ardından database bilgilerini db.json dosyasından düzenleyiniz.
     "database": "eczane",
     "debug": false
 }
+```
 
 
 
