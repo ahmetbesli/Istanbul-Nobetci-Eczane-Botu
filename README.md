@@ -65,13 +65,13 @@ Bu işlem ardından database bilgilerini db.json dosyasından düzenleyiniz.
 
 Örn: 
 
-**{
+{
     "host": "localhost",
     "user": "root",
     "password": "eczane",
     "database": "eczane",
     "debug": false
-}**
+}
 
 
 
