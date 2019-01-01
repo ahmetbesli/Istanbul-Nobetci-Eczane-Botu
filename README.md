@@ -12,13 +12,19 @@ Konsoldan projenin bulunduğu konuma gelerek aşağıda ki komutu çalıştırma
 
 Kodu çalıştırırken belirli opsiyonlar bulunmaktadır. Bunlar; "srv", "json", "ftp", "db" ve "" tur. Bu opsiyonları komut satırında vermeniz gerekmektedir.
 
+### Konsolda Görüntüleme
+
 `node istanbul.js`
 
 Eczaneleri konsolda JSON halinde görüntüler.
 
+### JSON Dosyası Olarak Kaydetme
+
 `node istanbul.js "json"`
 
 Eczaneleri istanbul_**günün tarihi**.json olarak kodun bulunduğu konuma dosya olarak kaydeder.
+
+### Uzak Sunucuya Veri Yükleme
 
 `node istanbul.js "ftp"`
 
@@ -33,6 +39,8 @@ Bu kodu çalıştırmadan önce host.json dosyasını gerekli bilgilerle düzenl
     "password": "123456",
     "port": 21
 }**
+
+### Veritabanına Veriyi Kaydetme
 
 `node istanbul.js "db"`
 
